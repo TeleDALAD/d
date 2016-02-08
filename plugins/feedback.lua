@@ -2,7 +2,7 @@ do
 
 function run(msg, matches)
 
-local fuse = '#DearAdmin😜 we have recived a new feedback just now : #newfeedback \n\n🆔 : ' .. msg.from.id .. '\n\nNAME▶️ : ' .. msg.from.print_name ..'\n\nusername▶️ :@ ' .. msg.from.username  ..'\pm :\n\n' .. matches[1] 
+local fuse = '#DearAdmin😜 we have recived a new feedback just now : #newfeedback \n\nID▶️ : ' .. msg.from.id .. '\n\nName▶ : ' .. msg.from.print_name ..'\n\nusername▶️ :@ ' .. msg.from.username  ..'\n\n🅿️♏️ :\n\n\n' .. matches[1] 
 local fuses = '!printf user#id' .. msg.from.id
 
 
@@ -19,9 +19,9 @@ local fuses = '!printf user#id' .. msg.from.id
  else
 
 
-                 local sends0 = send_msg('chat#59845789', fuse, ok_cb, false)
+                 local sends0 = send_msg('chat#116826051', fuse, ok_cb, false)
 
- return 'sent! Tnx you'
+ return 'send!'
 
      
 
@@ -29,15 +29,14 @@ end
 
 end
 return {
-  description = "Feedback to sudos",
+  description = "Feedback",
 
-  usage = "!feedback : send maseage to admins with bot",
+  usage = "feedback : پیام خود را ارسال کنید",
   patterns = {
-    "^[!/]([Ff]eedback) (.*)$"
+    "^[Ff]eedback (.*)$"
 
   },
   run = run
 }
 
 end
-
