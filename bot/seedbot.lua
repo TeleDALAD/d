@@ -229,8 +229,7 @@ function create_config( )
     "welcome",
     "feedback",
     "echo",
-    "filter",
-    "Antisticker"
+    "filter"
     },
     sudo_users = {175623013,139274725},--Sudo users
     disabled_channels = {},
