@@ -1,3 +1,4 @@
+
 local function pre_process(msg)
   -- SERVICE MESSAGE
   if msg.action and msg.action.type then
@@ -95,8 +96,7 @@ local function kick_ban_res(extra, success, result)
              return send_large_msg(receiver, "You can't kick yourself")
          end
          if is_momod2(member_id, chat_id) and not is_admin2(sender) then
-            return s
-end_large_msg(receiver, "You can't kick mods/owner/admins")
+            return send_large_msg(receiver, "You can't kick mods/owner/admins")
          end
          return kick_user(member_id, chat_id)
       elseif get_cmd == 'ban' then
@@ -203,8 +203,7 @@ local function run(msg, matches)
         	redis:srem(hash, user_id)
         	local name = user_print_name(msg.from)
         	savelog(msg.to.id, name.." ["..msg.from.id.."] unbaned user ".. matches[2])
-        	return 'User '.
-.user_id..' unbanned'
+        	return 'User '..user_id..' unbanned'
       else
 		local cbres_extra = {
 			chat_id = msg.to.id,
@@ -309,23 +308,24 @@ end
 
 return {
   patterns = {
-    "^([Bb]anall) (.*)$",
-    "^([Bb]anall)$",
-    "^([Bb]anlist) (.*)$",
-    "^([Bb]anlist)$",
-    "^([Gg]banlist)$",
-    "^([Bb]an) (.*)$",
-    "^([Kk]ick)$",
-    "^([Uu]nban) (.*)$",
-    "^([Uu]nbanall) (.*)$",
-    "^([Uu]nbanall)$",
-    "^([Kk]ick) (.*)$",
-    "^([Kk]ickme)$",
-    "^([Bb]an)$",
-    "^([Uu]nban)$",
-    "^([Ii]d)$",
+    "^(banall) (.*)$",
+    "^(banall)$",
+    "^(banlist) (.*)$",
+    "^(banlist)$",
+    "^(gbanlist)$",
+    "^(ban) (.*)$",
+    "^(kick)$",
+    "^(unban) (.*)$",
+    "^(unbanall) (.*)$",
+    "^(unbanall)$",
+    "^(kick) (.*)$",
+    "^(kickme)$",
+    "^(ban)$",
+    "^(unban)$",
+    "^(id)$",
     "^!!tgservice (.+)$"
   },
   run = run,
   pre_process = pre_process
 }
+
