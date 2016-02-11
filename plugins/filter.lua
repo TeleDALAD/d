@@ -128,17 +128,13 @@ end
 
 return {
 	patterns = {
-		"^([Ff]ilter) (.+) (%d+)$",
-		"^([Ff]ilter) (.+) (.+)$",
-		"^([Ff]ilter) (.+)$",
+		"^[!/]([Ff]ilter) (.+) (%d+)$",
+		"^[!/]([Ff]ilter) (.+) (.+)$",
+		"^[!/]([Ff]ilter) (.+)$",
 		"(.+)"
   	},
   	run = run
 } 
 
 end
--- shared by mehrpouya
--- for telegamer bot
--- هر گونه کپی بدون ذکر منبع حرام  است
--- tg 2015
--- thanks to my friends
+
